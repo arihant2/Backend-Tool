@@ -6,9 +6,9 @@
   "main": "server.js",
   "scripts": {
     "try": "nodemon --watch backend --exec node experimental-modules server.js",
-    "start": "nodemon --exec node experimental-modules server.js",
+    "start": "nodemon --exec node experimental-modules backend/server.js",
     "start1": "nodemon server.js",
-    "start2": "nodemon --experimental-specifier-resolution=node backend/server.js"
+    "start2": "nodemon --experimental-specifier-resolution=node server.js"
   },
   "repository": {
     "type": "git",
