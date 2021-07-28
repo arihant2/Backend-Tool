@@ -3,11 +3,11 @@ const { createLogger, format, transports } = winston;
 const { combine, timestamp, simple } = format;
 const { Console, File, MongoDB } = transports;
 import 'winston-mongodb';
-import { config } from 'dotenv';
+// import { config } from 'dotenv';
 
-if(config().error) console.log(config().error.message);
+// if(config().error) console.log(config().error.message);
 
-const dbUrl = config().parsed.DB_CON;
+const dbUrl = process.env.DB_CON;
 
 export const errLogsUtility = createLogger({
     format: combine(timestamp(),simple()),

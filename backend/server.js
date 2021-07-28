@@ -2,12 +2,12 @@ import express from 'express';
 import bodyParser from 'body-parser';
 import mongoose from 'mongoose';
 import cors from 'cors';
-import { config } from 'dotenv';
+// import { config } from 'dotenv';
 
 import routes from './routes/index.js';
 import { errLogsUtility } from './utils/errHandling/errLogs.js';
 
-if(config().error) errLogsUtility.error(config().error.message);
+// if(config().error) errLogsUtility.error(config().error.message);
 
 const app = express();
 
@@ -18,7 +18,8 @@ app.use(cors());
 
 app.use('/',routes);
 
-const { HOST:host, PORT:port=6000, DB_CON:dbUrl } = config().parsed;
+// const { HOST:host, PORT:port=6000, DB_CON:dbUrl } = config().parsed;
+const { HOST:host, PORT:port=6000, DB_CON:dbUrl } = process.env;
 
 mongoose.connect(
     dbUrl,
